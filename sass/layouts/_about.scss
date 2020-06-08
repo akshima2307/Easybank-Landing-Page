@@ -1,0 +1,41 @@
+.about{
+  height: 80vh;
+  background-color: $Light-Grayish-Blue;
+  position: relative;
+  &__container{
+      margin-left: 9rem;
+      margin-right: 9rem;
+  }
+  &__content{
+    color:$Dark-Blue;
+    width: 40vw;
+    padding: 4rem;
+  }
+  &__heading{
+    letter-spacing: 2px;
+    font-size: 3rem;
+    font-weight: 300;
+  }
+  &__paragraph{
+    letter-spacing: 1.5px;
+    margin-top: 2rem;
+  }
+}
+
+
+.row{
+  position:absolute;
+  top: 50%;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  align-items: center;
+  align-content: center;
+}
+.col-1-of-4{
+  width:20vw;
+  align-self: center;
+  &:not(:last-child){
+    margin-right: 2rem;
+  }
+}

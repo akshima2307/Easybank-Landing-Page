@@ -1,0 +1,14 @@
+{
+  "name": "easybank-landing-page-master",
+  "version": "1.0.0",
+  "description": "A Landing page",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css  -w"
+  },
+  "author": "Akshima Sharma",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  }
+}

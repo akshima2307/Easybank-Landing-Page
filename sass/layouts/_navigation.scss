@@ -1,0 +1,74 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+.html{
+    font-size: 62.5%;
+}
+body{
+    font-family: 'Public Sans', sans-serif;
+}
+
+$Dark-Blue: hsl(233, 26%, 24%);
+$Lime-Green: hsl(136, 65%, 51%);
+$Bright-Cyan: hsl(192, 70%, 51%);
+
+
+
+$Grayish-Blue: hsl(233, 8%, 62%);
+$Light-Grayish-Blue: hsl(220, 16%, 96%);
+$Very-Light-Gray: hsl(0, 0%, 98%);
+$White: hsl(0, 0%, 100%);
+
+
+
+
+.navigation{
+  background-color: $White; 
+  height: 10vh;
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+   box-shadow: 0 .5rem 1rem rgba(#000,.2);
+  &__list{  
+    display: flex;
+    justify-content: space-between;
+  }
+  &__logo{
+    margin-left: 7rem;
+  }  
+  &__item{
+    font-weight: 400;
+    list-style: none;
+    margin-right: 2rem;
+  }
+  &__link{
+    color:$Grayish-Blue;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 400;
+    padding-bottom: 1.8rem;
+    transition: all .2s;
+    &:hover{
+      border-bottom: 5px solid $Lime-Green;
+    }
+  } 
+  &_btn{
+    margin-right: 8rem;
+  }
+}
+
+.btn{
+  text-decoration: none;
+  width: 7rem;
+  color:$Light-Grayish-Blue;
+  background-image: linear-gradient(to right , $Lime-Green,$Bright-Cyan);
+  padding: .8rem 2.8rem;
+  border-radius: 10rem;
+}
+.btn:hover{
+  background-color: $Lime-Green;
+}
