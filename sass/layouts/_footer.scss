@@ -1,0 +1,43 @@
+.footer{
+  height: 30vh;
+  background-color: $Dark-Blue;
+
+  &__row{
+    display: flex;
+    justify-content: space-between;
+    &:first-child{
+      padding: 3rem 5rem;
+    }
+  }
+  &__col-1-of-3{
+    width: 20rem;
+    position: relative;
+    & > p{
+      margin-top: 2rem;
+      color: $Grayish-Blue;
+    }
+  }
+  &__logo-box{
+    background-color: white;
+    width: 15rem;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+  }
+  &__social-media{
+    position: absolute;
+    top: 80%;
+    &__item{
+      display: inline-block;
+      margin-right: 1rem;
+    }
+  }
+  &__info{
+    list-style: none;
+    color:$Grayish-Blue;
+    display: flex;
+    flex-direction: column;
+    & > li{
+      display: block;
+    }
+  }
+}
