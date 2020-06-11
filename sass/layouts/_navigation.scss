@@ -5,9 +5,28 @@
   padding: 0;
   box-sizing: inherit;
 }
-.html{
-    font-size: 62.5%;
+@mixin respond($breakpoint) {
+    @if $breakpoint == Mobile-L{
+        @media (max-width: 26.56em)  {@content};//425px
+    }
+    @if $breakpoint == Tablet{
+        @media (max-width: 48em)  {@content};//768px
+    }
+    @if $breakpoint == Laptop{
+        @media (max-width: 64em)  {@content};//1024px
+    }
+    @if $breakpoint == big-desktop{
+        @media (min-width: 87.5em) {@content};//1400px
+    }
 }
+html{
+  @include respond(Tablet){
+      font-size: 75%;
+  }
+}
+
+
+
 body{
     font-family: 'Public Sans', sans-serif;
 }
@@ -24,22 +43,26 @@ $Very-Light-Gray: hsl(0, 0%, 98%);
 $White: hsl(0, 0%, 100%);
 
 
-
-
 .navigation{
-  background-color: $White; 
+  background-color: $White;
   height: 10vh;
   display:flex;
   justify-content: space-between;
   align-items:center;
-   box-shadow: 0 .5rem 1rem rgba(#000,.2);
-  &__list{  
+  box-shadow: 0 .5rem 1rem rgba(#000,.2);
+  &__list{
     display: flex;
     justify-content: space-between;
+    @include respond(Tablet){
+        display: none;
+    }
   }
   &__logo{
     margin-left: 7rem;
-  }  
+    @include respond(Laptop){
+        margin-left: 4rem;
+    }
+  }
   &__item{
     font-weight: 400;
     list-style: none;
@@ -50,15 +73,135 @@ $White: hsl(0, 0%, 100%);
     text-decoration: none;
     font-size: 1rem;
     font-weight: 400;
-    padding-bottom: 1.8rem;
+    padding-bottom: 1.5rem;
     transition: all .2s;
     &:hover{
       border-bottom: 5px solid $Lime-Green;
     }
-  } 
+  }
   &_btn{
     margin-right: 8rem;
+    @include respond(Tablet){
+        display: none;
+    }
   }
+  &__checkbox{
+    display: none;
+
+  }
+  // Hamburger navigation icon
+  @include respond(Tablet) {
+    &__background{
+      width: 4rem;
+      height: 4rem;
+      position: absolute;
+      right: 6.5rem;
+      background-image: radial-gradient($Bright-Cyan,$Lime-Green);
+
+      z-index: 1000;
+      transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+    }
+    &__checkbox{
+      display: none;
+
+    }
+    &__button{
+      background-color: white;
+      width: 5rem;
+      height: 5rem;
+      position: absolute;
+      right: 6rem;
+      z-index: 2000;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    &__nav{
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 1500;
+      transition: all .2s;
+      opacity: 0;
+      width: 0;
+      transition: all .8s cubic-bezier(0.65 , -0.55 , 0.265 , 1.55);
+
+    }
+    &__list{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      list-style: none;
+      text-align: center;
+      width: 100%;
+
+    }
+    &__item{
+      margin: 1rem;
+
+    }
+    &__link{
+      &:link,
+      &:visited{
+      display: inline-block;
+      font-size: 3rem;
+      text-decoration: none;
+      font-weight: 200;
+      text-transform: uppercase;
+      color: white;
+      transition: all .2s;
+      padding: 1rem 2rem;
+      background-size: 220%;
+      background-image: linear-gradient(120deg , transparent 0% , transparent 50% , white 50%);
+      transition: all .5s;
+      }
+      &:hover{
+          color: $Lime-Green;
+          background-position: 100%;
+          transform: translateX(1rem);
+      }
+    }
+    &__checkbox:checked ~ &__background {
+      transform: scale(80);
+    }
+    &__checkbox:checked ~ &__nav {
+      opacity: 1;
+      width: 100%;
+    }
+  //icon
+
+    &__icon {
+      position: relative;
+      margin-top: 2.5rem;
+      &,
+      &::before,
+      &::after{
+          display: inline-block;
+          width: 3rem;
+          height: 2px;
+          background-color: $Bright-Cyan;
+
+      }
+      &::before,
+      &::after{
+          content:"";
+          position: absolute;
+          left: 0;
+          transition: all .2s;
+      }
+      &::before{
+          top: -.6rem;
+      }
+      &::after{
+          top: .6rem;
+      }
+    }
+  }
+
+
 }
 
 .btn{
@@ -70,5 +213,9 @@ $White: hsl(0, 0%, 100%);
   border-radius: 10rem;
 }
 .btn:hover{
-  background-color: $Lime-Green;
+    background-image: linear-gradient(to right , $Bright-Cyan,$Lime-Green);
 }
+p{
+  color: $Dark-Blue;
+}
+h3{color: $Dark-Blue;}

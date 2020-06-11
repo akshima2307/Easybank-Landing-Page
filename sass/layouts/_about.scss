@@ -11,6 +11,9 @@
     color:$Dark-Blue;
     width: 40vw;
     padding: 4rem;
+    @include respond(Tablet){
+        padding: 0;
+    }
   }
   &__heading{
     letter-spacing: 2px;
@@ -20,6 +23,10 @@
   &__paragraph{
     letter-spacing: 1.5px;
     margin-top: 2rem;
+    @include respond(Tablet){
+      letter-spacing: 1px;
+      margin-top: 1rem;
+    }
   }
 }
 
@@ -32,6 +39,9 @@
   justify-content:space-between;
   align-items: center;
   align-content:flex-start;
+  @include respond(Tablet) {
+      top:40%;
+  }
 }
 .col-1-of-4{
   width:18vw;

@@ -20,7 +20,7 @@
   &__logo-box{
     background-color: white;
     width: 15rem;
-    padding: 1rem 2rem;
+    padding: 1rem;
     border-radius: 5px;
   }
   &__social-media{
@@ -38,6 +38,7 @@
     flex-direction: column;
     & > li{
       display: block;
+      margin-bottom: 5px;
     }
   }
 }

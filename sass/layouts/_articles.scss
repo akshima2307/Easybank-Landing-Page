@@ -1,7 +1,7 @@
 .article{
   background-color: $Very-Light-Gray;
   height: 60vh;
-  margin-bottom: 10rem;
+  margin: 0 2rem 10rem 2rem;
   &__heading{
     font-size: 2rem;
     font-weight: 300;
@@ -11,17 +11,19 @@
   &__row{
     display: flex;
     justify-content: center;
-    margin-right: 2rem;
   }
 
   &__col-1-of-4{
-    width: 17rem;
+    width: 20%;
+    color: $Dark-Blue;
     &:not(:last-child){
       margin-right: 4rem;
     }
+    
+
     & > .img {
-      width: 16rem;
-      height: 12rem;
+      width: 100%;
+      height: 100%;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
@@ -31,18 +33,6 @@
     &__3{background-image: url("../images/image-plane.jpg");}
     &__4{background-image: url("../images/image-confetti.jpg");}
 
-    & > h3{
-      color: $Dark-Blue;
-      font-size: 1.5rem;
-      font-weight: 400;
-      padding: 1rem 0;
-    }
-
-    & > p{
-      width: 15rem;
-      color: $Dark-Blue;
-    }
 
   }
-
 }
