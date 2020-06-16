@@ -14,11 +14,24 @@
     @include respond(Tablet){
       margin-bottom: 0;
     }
+    @include respond(Mobile-L){
+      height: 130vh;
+      background-image: url("../images/image-mockups.png") , url("../images/bg-intro-mobile.svg");
+      background-size: 75% , 100%;
+      background-position: top , top;
+      margin-top: -9rem;
+    }
     &__content{
         width: 36vw;
         position: absolute;
         top: 23%;
         left: 7%;
+        @include respond(Mobile-L){
+          width: 70vw;
+          top: 57%;
+          left: 14%;
+          text-align: center;
+        }
     }
     &__heading{
         color:$Dark-Blue;

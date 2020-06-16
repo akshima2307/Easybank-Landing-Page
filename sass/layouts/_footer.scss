@@ -1,24 +1,36 @@
 .footer{
   height: 30vh;
   background-color: $Dark-Blue;
+  @include respond(Mobile-L){
+      height: 90vh;
+      font-size: 1.5rem;
+  }
 
   &__row{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     &:first-child{
       padding: 3rem 5rem;
+    }
+    @include respond(Mobile-L){
+        justify-content: space-around;
+        text-align: center;
     }
   }
   &__col-1-of-3{
     width: 20rem;
     position: relative;
+    @include respond(Mobile-L){
+      width: 60%;
+      margin-bottom: 5rem;
+    }
     & > p{
       margin-top: 2rem;
       color: $Grayish-Blue;
     }
   }
   &__logo-box{
-    background-color: white;
     width: 15rem;
     padding: 1rem;
     border-radius: 5px;
@@ -29,6 +41,10 @@
     &__item{
       display: inline-block;
       margin-right: 1rem;
+    }
+    @include respond(Mobile-L){
+      top: 100%;
+      left: 10%;
     }
   }
   &__info{

@@ -7,19 +7,22 @@
 }
 @mixin respond($breakpoint) {
     @if $breakpoint == Mobile-L{
-        @media (max-width: 26.56em)  {@content};//425px
+        @media (max-width: 31.25em)  {@content};//500px
     }
     @if $breakpoint == Tablet{
         @media (max-width: 48em)  {@content};//768px
     }
     @if $breakpoint == Laptop{
-        @media (max-width: 64em)  {@content};//1024px
+        @media (max-width: 66.0625em)  {@content};//1057px
     }
     @if $breakpoint == big-desktop{
         @media (min-width: 87.5em) {@content};//1400px
     }
 }
 html{
+  @include respond(Laptop){
+      font-size: 80%;
+  }
   @include respond(Tablet){
       font-size: 75%;
   }
@@ -50,17 +53,19 @@ $White: hsl(0, 0%, 100%);
   justify-content: space-between;
   align-items:center;
   box-shadow: 0 .5rem 1rem rgba(#000,.2);
+  position: relative;
+  z-index: 10;
   &__list{
     display: flex;
     justify-content: space-between;
-    @include respond(Tablet){
+    @include respond(Laptop){
         display: none;
     }
   }
   &__logo{
     margin-left: 7rem;
     @include respond(Laptop){
-        margin-left: 4rem;
+        margin-left: 3rem;
     }
   }
   &__item{
@@ -90,7 +95,8 @@ $White: hsl(0, 0%, 100%);
 
   }
   // Hamburger navigation icon
-  @include respond(Tablet) {
+  @include respond(Laptop) {
+    &_btn{display: none;}
     &__background{
       width: 4rem;
       height: 4rem;

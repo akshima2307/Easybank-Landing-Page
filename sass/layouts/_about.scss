@@ -1,11 +1,15 @@
 .about{
   height: 80vh;
-  padding: 2rem 4rem;
+  padding: 4rem 4rem;
   background-color: $Light-Grayish-Blue;
   position: relative;
-  &__container{
-      margin-left: 9rem;
-      margin-right: 9rem;
+
+  @include respond(Tablet){
+      height: 100vh;
+      padding: 5rem 4rem;
+  }
+  @include respond(Mobile-L){
+      height: 195vh;
   }
   &__content{
     color:$Dark-Blue;
@@ -13,6 +17,10 @@
     padding: 4rem;
     @include respond(Tablet){
         padding: 0;
+    }
+    @include respond(Mobile-L){
+      text-align: center;
+      width: 80vw;
     }
   }
   &__heading{
@@ -39,9 +47,16 @@
   justify-content:space-between;
   align-items: center;
   align-content:flex-start;
+  flex-wrap: wrap;
+
   @include respond(Tablet) {
-      top:40%;
+      top:30%;
+      justify-content: space-around;
   }
+  @include respond(Mobile-L){
+      top: 20%;
+  }
+
 }
 .col-1-of-4{
   width:18vw;
@@ -59,5 +74,18 @@
   & > p{
     color: $Dark-Blue;
     width: 12rem;
+    @include respond(Mobile-L){
+        width: 18rem;
+    }
+  }
+
+  @include respond(Tablet){
+      width: 31vw;
+      margin-bottom: 2rem;
+  }
+  @include respond(Mobile-L){
+      width: 50%;
+      text-align: center;
+      margin-bottom: 4rem;
   }
 }
