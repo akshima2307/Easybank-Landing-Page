@@ -1,6 +1,9 @@
 .footer{
   height: 30vh;
   background-color: $Dark-Blue;
+  @include respond(Tablet){
+      height: 40vh;
+  }
   @include respond(Mobile-L){
       height: 90vh;
       font-size: 1.5rem;
@@ -11,7 +14,12 @@
     justify-content: space-between;
     flex-wrap: wrap;
     &:first-child{
-      padding: 3rem 5rem;
+      padding: 3rem 2rem;
+    }
+    @include respond(Tablet){
+      &:first-child{
+        padding: 7rem 2rem;
+      }
     }
     @include respond(Mobile-L){
         justify-content: space-around;

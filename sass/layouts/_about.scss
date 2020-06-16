@@ -3,13 +3,15 @@
   padding: 4rem 4rem;
   background-color: $Light-Grayish-Blue;
   position: relative;
-
+  @include respond(Laptop){
+      height: 110vh;
+  }
   @include respond(Tablet){
       height: 100vh;
       padding: 5rem 4rem;
   }
   @include respond(Mobile-L){
-      height: 195vh;
+      height: 190vh;
   }
   &__content{
     color:$Dark-Blue;

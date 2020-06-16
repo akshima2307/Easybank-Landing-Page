@@ -9,13 +9,14 @@
     margin-bottom: -7rem;
     z-index: 2;
     @include respond(Laptop){
-      height: 82vh;
+      height: 125vh;
     }
     @include respond(Tablet){
+      height: 80vh;
       margin-bottom: 0;
     }
     @include respond(Mobile-L){
-      height: 130vh;
+      height: 140vh;
       background-image: url("../images/image-mockups.png") , url("../images/bg-intro-mobile.svg");
       background-size: 75% , 100%;
       background-position: top , top;
